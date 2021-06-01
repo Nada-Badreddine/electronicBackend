@@ -16,8 +16,6 @@ var app = express();
 
 var bodyParser = require('body-parser');
 
-var generate_uid = require('./routes/generate_uid');
-var customer = require('./routes/customer');
 
 
 
@@ -55,9 +53,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-
-app.use('/api/v1/customer', customer);
-app.use('/api/v1/generate_uid', generate_uid);
-
+app.listen(3000, () => {
+console.log("listen")
+})
 
 module.exports = app;
